@@ -1,0 +1,81 @@
+@import "variaveis.scss";
+
+footer {
+  padding: 20px;
+
+  div {
+    grid-column: 1/-1;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $secondary-color;
+      margin-bottom: 10px;
+      font-family: "Acme";
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+
+    li {
+      background-color: #212020;
+      border-radius: 50%;
+      border: 1px solid #333;
+      list-style: none;
+
+      a {
+        color: $primary-color;
+        &:hover {
+          color: $secondary-color;
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      i {
+        padding: 15px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $primary-color;
+    text-align: center;
+    font-family: "Poppins";
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 10px;
+
+    div {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+      flex-direction: row;
+      gap: 15px;
+
+      li {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    p{
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="bar-container">
+    <h1>SKILLS</h1>
+    <p>Tecnologias que eu possuo certo conhecimento</p>
+    <div class="bar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="grid">
+    @for (skill of skills; track $index) {
+    <app-skills-card [iconClass]="skill.iconClass" [title]="skill.title" [description]="skill.description" />
+    }
+  </div>
+</div>

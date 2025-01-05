@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import "variaveis.scss";
+
+* {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1400px;
+  animation: init 0.7s forwards;
+  background-color: $primary-bg-color;
+}
+
+.bar-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 10px 0;
+  color: $text-color-light;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $secondary-color;
+    margin-bottom: 15px;
+    font-family: "Acme";
+  }
+
+  p {
+    font-family: "Acme";
+    color: $text-color;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    span {
+      background-color: $secondary-color;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+  border-radius: 10px;
+}
+
+@keyframes init {
+  from {
+    opacity: 0;
+    transform: translate(0, -60px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .bar-container {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bar-container {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

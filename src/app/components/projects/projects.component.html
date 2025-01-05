@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="bar-container">
+    <h1>Projetos</h1>
+    <p>Alguns projetos desenvolvidos</p>
+    <div class="bar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="projects-models">
+    <ul>
+      <li (click)="selectCategory('Todos')">Todos</li>
+      <li (click)="selectCategory('Projetos Pessoais')">Projetos Pessoais</li>
+      <li (click)="selectCategory('Projetos Faculdade')">Projetos Faculdade</li>
+      <li (click)="selectCategory('Projetos para Treino')">Projetos para Treino</li>
+    </ul>
+  </div>
+  <div class="grid">
+    @for (project of filterProjects; track $index) {
+    <app-project-card [link]="project.link" [alt]="project.alt" [image]="project.image" />
+    }
+
+  </div>
+</div>

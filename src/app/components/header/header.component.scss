@@ -1,0 +1,108 @@
+@import "variaveis.scss";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary-bg-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid $primary-color;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    border-bottom: none;
+    padding: 10px 20px;
+  }
+
+  h1 {
+    color: $secondary-color;
+    font-size: 2rem;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  span {
+    color: $primary-color;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @media (max-width: 768px) {
+        background-color: $primary-bg-color;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        text-align: end;
+        gap: 15px;
+        border-bottom: 1px solid $primary-color;
+        padding-bottom: 10px;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+
+    @media (max-width: 768px) {
+      margin-right: 20px;
+    }
+
+    a {
+      color: $primary-color;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: darken($primary-color, 10%);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 4px;
+      background-color: $secondary-color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
