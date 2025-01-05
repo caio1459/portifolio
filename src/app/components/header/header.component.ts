@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,6 +11,8 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   menuOpen = false;
 
+  constructor(private viewportScroller: ViewportScroller) {}
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
     const navLinks = document.querySelector('.nav-links') as HTMLElement;
@@ -18,5 +21,9 @@ export class HeaderComponent {
     } else {
       navLinks.style.display = 'none';
     }
+  }
+
+  scrollToSection(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
   }
 }
